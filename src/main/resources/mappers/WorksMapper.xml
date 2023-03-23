@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.wbu.bs.dao.WorksDao">
+    <resultMap id="WorksMap" type="Works">
+        <result column="works_id" property="worksId"/>
+        <result column="works_name" property="worksName"/>
+        <result column="works_content" property="worksContent"/>
+        <result column="works_click" property="worksClick"/>
+        <result column="works_uid" property="worksUid"/>
+    </resultMap>
+    <select id="findAll" resultMap="WorksMap">
+    select works_id,works_name,works_content,works_click,works_uid from works;
+</select>
+</mapper>

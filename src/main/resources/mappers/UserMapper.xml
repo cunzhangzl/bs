@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.wbu.bs.dao.UserDao">
+    <resultMap id="userMap" type="User">
+        <result column="users_id" property="usersId"/>
+        <result column="users_pwd" property="usersPwd"/>
+        <result column="users_name" property="usersName"/>
+        <result column="users_age" property="usersAge"/>
+        <result column="users_gender" property="usersGender"/>
+        <result column="users_tel" property="usersTel"/>
+        <result column="users_remark" property="usersRemark"/>
+
+    </resultMap>
+    <select id="findAll" resultMap="userMap">
+    select users_id,user_pwd,users_name,users_age,users_gender,users_tel,users_remark from users;
+    </select>
+    <select id="findById" resultMap="userMap">
+        select users_id,users_pwd,users_name,users_age,users_gender,users_tel,users_remark from users
+        where users_id=#{userId};
+    </select>
+</mapper>
